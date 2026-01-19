@@ -91,8 +91,6 @@ body {
   gap: 0.25rem;
   padding: 0.4rem 0.9rem;
   border: 1px solid transparent;
-
-
   border-radius: 999px;
   background: rgba(255,255,255,0.08);
   color: var(--text-primary);
@@ -101,6 +99,9 @@ body {
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
+
+
+
 .hero{
   width: 100%;
 }
@@ -108,7 +109,7 @@ body {
 .hero__media{
   display: grid;
   width: 100%;
-  min-height: 70vh;
+  min-height: calc(100vh - 96px);
   isolation: isolate;
 }
 
@@ -149,19 +150,10 @@ body {
 }
 
 
-
 .main-header .main-navigation .navigation-element:hover{
   background: rgba(255,255,255,0.14);
   border-color: rgba(255,255,255,0.25);
   color: var(--text-secondary);
-
-  .hero__media{
-    min-height: 60vh;
-  }
-
-  .hero__overlay{
-    padding: 1.5rem 1.25rem;
-  }
 }
 
 
@@ -202,5 +194,13 @@ body {
     width: 100%;
     padding: 0.5rem 0.75rem;
     border-radius: 8px;
+  }
+
+  .hero__media{
+    min-height: calc(100vh - 120px);
+  }
+
+  .hero__overlay{
+    padding: 1.5rem 1.25rem;
   }
 }
