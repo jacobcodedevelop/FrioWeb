@@ -10,6 +10,7 @@
   --primary-hover: rgb(13, 91, 168);
   --primary-light: rgb(0, 153, 255);
   --background:rgb(250,250,250);
+  --frio-green: rgb(99, 196, 77, 0.80);
   --text-primary: rgb(255, 255, 255);
   --text-secondary: rgb(203, 213, 225);
   --text-muted: rgb(148, 163, 184);
@@ -109,7 +110,6 @@ body {
 .hero__media{
   display: grid;
   width: 100%;
-  min-height: calc(100vh - 96px);
   isolation: isolate;
 }
 
@@ -136,7 +136,7 @@ body {
   color: #fff;
   padding: 2rem 1.5rem;
   max-width: 900px;
-  background: rgba(0, 0, 0, 0.35);
+  background: var(--frio-green);
   border-radius: 12px;
 }
 
