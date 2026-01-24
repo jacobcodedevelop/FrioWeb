@@ -9,8 +9,8 @@
   --primary-dark: rgb(8, 8, 8);
   --primary-hover: rgb(13, 91, 168);
   --primary-light: rgb(0, 153, 255);
-  --background:rgb(250,250,250);
-  --frio-green: rgb(99, 196, 77, 0.80);
+  --background: rgb(240, 240, 240);
+  --frio-green: rgb(99, 196, 77, 0.8);
   --text-primary: rgb(255, 255, 255);
   --text-secondary: rgb(203, 213, 225);
   --text-muted: rgb(148, 163, 184);
@@ -20,7 +20,6 @@
   --input-bg: rgb(30, 41, 59);
   --hsla-example: rgb(31, 143, 255);
 }
-
 
 body {
   font-family: system-ui;
@@ -32,7 +31,7 @@ body {
   line-height: 1.6;
 }
 
-.main-header{
+.main-header {
   background-color: var(--primary);
   width: 100%;
   display: flex;
@@ -44,18 +43,17 @@ body {
   box-shadow: 0 15px 10px var(--shadow);
 }
 
-
-.main-header .logo{
+.main-header .logo {
   width: clamp(10rem, 15vw, 18rem); /* relativo y acotado */
   height: auto;
   flex-shrink: 0;
 }
 
-.nav-toggle{
+.nav-toggle {
   display: none;
 }
 
-.nav-toggle-btn{
+.nav-toggle-btn {
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -63,13 +61,13 @@ body {
   width: 42px;
   height: 42px;
   border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.25);
-  background: rgba(0,0,0,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.08);
   padding: 8px;
   cursor: pointer;
 }
 
-.nav-toggle-btn span{
+.nav-toggle-btn span {
   display: block;
   height: 2px;
   width: 100%;
@@ -77,49 +75,54 @@ body {
   border-radius: 2px;
 }
 
-
-.main-header .main-navigation ul{
-  display: flex;             /* elementos en fila */
-  gap: 16px;                  /* espacio entre elementos */
-  list-style: none;           /* sin viñetas */
+.main-header .main-navigation ul {
+  display: flex; /* elementos en fila */
+  gap: 16px; /* espacio entre elementos */
+  list-style: none; /* sin viñetas */
   margin: 0;
-  padding: 0; 
+  padding: 0;
 }
 
-.main-header .main-navigation .navigation-element{
+.main-header .main-navigation .navigation-element {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
   padding: 0.4rem 0.9rem;
   border: 1px solid transparent;
   border-radius: 999px;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   color: var(--text-primary);
   text-decoration: none;
   font-weight: 800;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
+.main-header .main-navigation .navigation-element:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: var(--text-secondary);
+}
 
-
-
-.hero{
+--------------------------------------------------------- .hero {
   width: 100%;
 }
 
-.hero__media{
+.hero__media {
   display: grid;
   width: 100%;
   isolation: isolate;
 }
 
-.hero__media picture{
+.hero__media picture {
   grid-area: 1 / 1;
   width: 100%;
   height: 100%;
 }
 
-.hero__media img{
+.hero__media img {
   width: 100%;
   height: 100%;
   max-height: 100vh;
@@ -128,7 +131,7 @@ body {
   display: block;
 }
 
-.hero__overlay{
+.hero__overlay {
   grid-area: 1 / 1;
   align-self: center;
   justify-self: center;
@@ -140,22 +143,24 @@ body {
   border-radius: 12px;
 }
 
-.hero__overlay h1{
+.hero__overlay h1 {
   margin: 0 0 0.5rem;
   font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
 }
 
-.hero__overlay p{
+.hero__overlay p {
   margin: 0;
   font-size: clamp(1rem, 2vw + 0.5rem, 1.35rem);
 }
 
 
-.main-header .main-navigation .navigation-element:hover{
-  background: rgba(255,255,255,0.14);
-  border-color: rgba(255,255,255,0.25);
-  color: var(--text-secondary);
+
+ .frigoxgc-section {
+  background-color: var(--background);
 }
+
+
+
 
 
 
@@ -179,7 +184,7 @@ body {
     order: 3;
   }
 
-  .main-header .main-navigation ul{
+  .main-header .main-navigation ul {
     display: none;
     flex-direction: column;
     align-items: flex-start;
@@ -187,22 +192,27 @@ body {
     margin-top: 0.25rem;
   }
 
-  .nav-toggle:checked ~ .main-navigation ul{
+  .nav-toggle:checked ~ .main-navigation ul {
     display: flex;
   }
 
-  .main-header .main-navigation .navigation-element{
+  .main-header .main-navigation .navigation-element {
     width: 100%;
     padding: 0.5rem 0.75rem;
     border-radius: 8px;
   }
 
-  .hero__media{
+  .hero__media {
     min-height: 50vh;
-  
   }
 
-  .hero__overlay{
+  .hero__overlay {
     padding: 1.5rem 1.25rem;
   }
+
+  .frigoxgc-title {
+    font-size: clamp(5rem, 1vw + 1rem, 2.5rem);
+    text-anchor: middle;
+  }
+
 }
