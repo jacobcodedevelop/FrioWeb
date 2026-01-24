@@ -106,7 +106,7 @@ body {
   color: var(--text-secondary);
 }
 
---------------------------------------------------------- .hero {
+.hero {
   width: 100%;
 }
 
@@ -155,9 +155,22 @@ body {
 
 
 
- .frigoxgc-section {
+.frigoxgc-section {
   background-color: var(--background);
 }
+
+.frigoxgcsvg {
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.25rem auto;
+  background: transparent;
+}
+
+
+
+
 
 
 
@@ -214,5 +227,12 @@ body {
     font-size: clamp(5rem, 1vw + 1rem, 2.5rem);
     text-anchor: middle;
   }
+
+  .frigoxgc-section {
+max-height: 260px;
+
+  }
+
+  
 
 }
