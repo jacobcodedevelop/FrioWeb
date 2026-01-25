@@ -16,7 +16,7 @@
   --text-muted: rgb(148, 163, 184);
   --border: rgba(255, 255, 255, 0.1);
   --card-bg: rgb(30, 41, 59);
-  --shadow: rgba(0, 0, 0, 0.048);
+  --shadow: rgba(0, 0, 0, 0.04);
   --input-bg: rgb(30, 41, 59);
   --hsla-example: rgb(31, 143, 255);
 }
@@ -165,24 +165,34 @@ body {
   align-self: center;
   justify-self: center;
   text-align: center;
+  margin-top: 0.7rem;
   color: var(--primary);
   font-size: 170%;
   font-family: helvetica, sans-serif;
 
 }
 
-
-
-
-
-
-
-
-
-
 .hero-frigoxgc {
   width: 100%;
-  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  background: var(--background);
+}
+
+.hero-frigoxgc::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 45%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.12) 0%,
+    rgba(0, 0, 0, 0.06) 5%,
+    rgba(0, 0, 0, 0) 10%
+  );
+  pointer-events: none;
+  z-index: 1;
 }
 
 .hero-frigoxgc-media {
@@ -204,6 +214,37 @@ display: block;
   max-height: 100vh;
   background-color: var(--background);
 }
+
+
+.other-brands {
+  width: 100%;
+  background: var(--frio-green);
+
+}
+
+
+.other-brands-text {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: var(--text-primary);
+  font-size: clamp(0.75rem, 3vw + 0.5rem, 2.5rem);
+  font-weight: 900;
+  font-family: helvetica, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -259,11 +300,34 @@ display: block;
 
   .hero-media {
     min-height: 50vh;
+ 
   }
 
   .hero-text-portada {
     padding: 1.5rem 1.25rem;
   }
+
+
+  .hero-frigoxgc {
+    margin-bottom: 0.75rem;
+  }
+
+
+  .hero-frigoxgc-text {
+    padding: 0rem 2rem 0rem 2rem;
+  
+  }
+
+  .hero-frigoxgc-text h1 {
+    font-size: clamp(1.35rem, 4vw + 0.6rem, 1.9rem);
+    line-height: 1.2;
+  }
+
+  .hero-frigoxgc-media picture {
+    width: 90%;
+  }
+
+
 
  
  
