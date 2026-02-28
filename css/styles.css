@@ -221,6 +221,44 @@ body {
   font-family: helvetica, sans-serif;
 }
 
+.logo-ticker {
+  overflow: hidden;
+  background: #fff;
+  padding: 1.5rem 0;
+}
+
+.logo-ticker__track {
+  display: flex;
+  gap: clamp(2rem, 3vw, 3.5rem);
+  width: max-content;
+  animation: logo-marquee 30s linear infinite;
+}
+
+.logo-ticker__track img {
+  height: 120px;
+  width: auto;
+  flex: 0 0 auto;
+
+}
+
+.logo-ticker:hover .logo-ticker__track {
+  animation-play-state: paused;
+}
+
+@keyframes logo-marquee {
+  to {
+    transform: translateX(-33.3333%);
+  }
+}
+
+
+
+
+
+
+
+
+
 .main-footer {
   background: var(--primary);
   color: #ffffff;
@@ -374,4 +412,18 @@ margin-top: 3rem;
   .hero-frigoxgc-media picture {
     width: 90%;
   }
+
+/* Ajustes móviles */
+  .logo-ticker {
+    padding: 1rem 0;
+  }
+  .logo-ticker__track img {
+    height: 70px;
+  }
+  
+}
+
+
+
+
 }
