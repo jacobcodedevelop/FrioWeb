@@ -10,6 +10,7 @@
   --primary-hover: rgb(13, 91, 168);
   --primary-light: rgb(0, 153, 255);
   --background: rgb(240, 240, 240);
+  --background2:rgb(251, 246, 246);
   --frio-green: rgb(99, 196, 77, 0.8);
   --text-primary: rgb(255, 255, 255);
   --text-secondary: rgb(203, 213, 225);
@@ -32,7 +33,7 @@ body {
 }
 
 .main-header {
-  background-color: var(--primary);
+  background-color: rgba(211, 81, 81, 0.92);
   width: 100%;
   display: flex;
   align-items: center;
@@ -41,6 +42,11 @@ body {
   padding: 0 1rem;
   box-sizing: border-box;
   box-shadow: 0 15px 10px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
 }
 
 .main-header .logo {
@@ -139,8 +145,8 @@ body {
   color: #fff;
   padding: 2rem 1.5rem;
   max-width: 900px;
-  background: var(--frio-green);
-  border-radius: 12px;
+  background: rgba(211, 81, 81, 0.8);
+  border-radius: 15px;
 }
 
 .hero-text-portada h1 {
@@ -209,7 +215,7 @@ body {
 
 .other-brands {
   width: 100%;
-  background: var(--frio-green);
+  background: var(--primary);
 }
 
 .other-brands-text {
@@ -219,6 +225,68 @@ body {
   font-size: clamp(0.75rem, 3vw + 0.5rem, 2.5rem);
   font-weight: 900;
   font-family: helvetica, sans-serif;
+}
+
+.texto-marcas {
+  width: 100%;
+  padding: 3rem 1.5rem 1.5rem;
+  text-align: center;
+  color: var(--primary);
+  font-family: Helvetica, sans-serif;
+  background: var(--background2);
+}
+
+.texto-marcas h1 {
+  max-width: 960px;
+  margin: 0 auto;
+  font-size: clamp(3rem, 2vw + 0.4rem, 1.7rem);
+  line-height: 1.6;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.texto-marcas p {
+  max-width: 960px;
+  margin: 0 auto;
+  font-size: clamp(1.5rem, 2vw + 0.4rem, 1.7rem);
+  line-height: 1.6;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.Marcas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: clamp(0.75rem, 1.4vw, 1.25rem);
+  row-gap: clamp(1.75rem, 3vw, 3rem);
+  padding: 1rem 20rem 10rem;
+  background: var(--background2);
+  justify-items: center;
+}
+
+.Marcas a {
+  display: block;
+}
+
+.Marcas img {
+  width: min(100%, 500px);
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  background: #f8f8f8;
+  padding: 0.5rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.Marcas a:hover img,
+.Marcas a:focus-visible img {
+  transform: scale(1.03);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.Marcas a:active img {
+  transform: scale(0.98);
 }
 
 .logo-ticker {
@@ -344,6 +412,9 @@ margin-top: 3rem;
     flex-wrap: wrap;
     gap: 0.5rem;
     padding: 0.5rem 0.75rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
 
   .main-footer {
@@ -413,17 +484,31 @@ margin-top: 3rem;
     width: 90%;
   }
 
-/* Ajustes móviles */
+  /* Ajustes móviles */
   .logo-ticker {
     padding: 1rem 0;
   }
   .logo-ticker__track img {
     height: 70px;
   }
-  
+
+  .Marcas {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem 3rem;
+    row-gap: 1.5rem;
+    column-gap: 1rem;
+  }
+
+  .texto-marcas {
+    padding: 2.25rem 1.25rem 1rem;
+  }
+
+  .texto-marcas p {
+    font-size: clamp(1.05rem, 2.5vw + 0.2rem, 1.4rem);
+  }
 }
 
 
 
 
-}
+
