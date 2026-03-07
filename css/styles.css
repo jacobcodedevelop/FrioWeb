@@ -10,7 +10,7 @@
   --primary-hover: rgb(13, 91, 168);
   --primary-light: rgb(0, 153, 255);
   --background: rgb(240, 240, 240);
-  --background2:rgb(251, 246, 246);
+  --background2: rgb(251, 246, 246);
   --frio-green: rgb(99, 196, 77, 0.8);
   --text-primary: rgb(255, 255, 255);
   --text-secondary: rgb(203, 213, 225);
@@ -276,7 +276,9 @@ body {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   background: #f8f8f8;
   padding: 0.5rem;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
 .Marcas a:hover img,
@@ -286,6 +288,69 @@ body {
 }
 
 .Marcas a:active img {
+  transform: scale(0.98);
+}
+
+.servicios {
+  background: var(--background2);
+  padding: 1.5rem 1.5rem 2.5rem;
+}
+
+.servicios h1 {
+  text-align: center;
+  color: var(--primary);
+  font-family:Helvetica, sans-serif;
+  font-size: clamp(2rem, 3vw + 0.5rem, 3rem);
+  margin-bottom: 3rem;
+}
+
+.servicios p {
+  text-align: center;
+  color: var(--primary);
+  font-family:Helvetica, sans-serif;
+  font-size: clamp(2.5rem, 2vw + 0.5rem, 1.35rem);
+}
+
+.servicios-grid {
+  max-width: 1700px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(260px, 1fr));
+  gap: clamp(1rem, 0.5vw, 2rem);
+  justify-items: center;
+}
+
+.servicio-card {
+  width: 100%;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.servicio-card img {
+  width: 100%;
+  height: 100%;
+  min-width: 400px;
+  max-width: 400px;
+  object-fit: contain;
+  display: block;
+}
+
+.servicio-card:hover,
+.servicio-card:focus-within {
+  transform: scale(1.03);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.servicio-card:active {
   transform: scale(0.98);
 }
 
@@ -303,10 +368,12 @@ body {
 }
 
 .logo-ticker__track img {
-  height: 120px;
+  height: clamp(80px, 10vw, 110px);
+  max-width: 180px;
   width: auto;
   flex: 0 0 auto;
-
+  object-fit: contain;
+  display: block;
 }
 
 .logo-ticker:hover .logo-ticker__track {
@@ -319,32 +386,44 @@ body {
   }
 }
 
-
-
-
-
-
-
-
-
 .main-footer {
   background: var(--primary);
   color: #ffffff;
   padding: 0.4rem 1.5rem;
   border-top: 2px solid rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-ice {
+  position: absolute;
+  bottom: 0;
+  width: clamp(140px, 16vw, 200px);
+  height: auto;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.2));
+  opacity: 0.8;
+}
+
+.footer-ice--left {
+  left: 125px;
+  top: 40px;
+}
+
+.footer-ice--right {
+  right: 120px;
+  top: 45px;
 }
 
 .footer-brand {
- max-width: 400px;
-  margin: 0 auto;      
+  max-width: 400px;
+  margin: 0 auto;
   padding-bottom: 2rem;
- 
 }
 
-.footer-brand img{
+.footer-brand img {
   width: 400px;
   height: auto;
-
 }
 
 .footer-columns {
@@ -398,14 +477,11 @@ body {
   font-size: 1rem;
 }
 
-
 .footer-text {
-display:block;
-text-align: center;
-margin-top: 3rem;
+  display: block;
+  text-align: center;
+  margin-top: 3rem;
 }
-
-
 
 @media (max-width: 768px) {
   .main-header {
@@ -419,6 +495,21 @@ margin-top: 3rem;
 
   .main-footer {
     padding: 1.25rem 1.25rem;
+  }
+
+  .footer-ice {
+    width: clamp(10px, 60vw, 150px);
+    opacity: 0.5;
+  }
+
+  .footer-ice--left {
+    left: -1px;
+    top: 250px;
+  }
+
+  .footer-ice--right {
+    right: -1px;
+    top: 250px;
   }
 
   .footer-columns {
@@ -455,8 +546,7 @@ margin-top: 3rem;
     width: 100%;
     padding: 0.5rem 0.75rem;
     border-radius: 8px;
-  justify-content: center; /* centra el contenido en el eje X */
-
+    justify-content: center; /* centra el contenido en el eje X */
   }
 
   .hero-media {
@@ -465,6 +555,29 @@ margin-top: 3rem;
 
   .hero-text-portada {
     padding: 1.5rem 1.25rem;
+  }
+
+  .servicios {
+    padding: 2.25rem 1.25rem 2rem;
+  }
+
+  .servicios h1 {
+    text-align: center;
+    color: var(--primary);
+    font-family: Helvetica, sans-serif;
+    font-size: clamp(2rem, 3vw + 0.5rem, 3rem);
+    margin-bottom: 3rem;
+  }
+
+  .servicios p {
+    text-align: center;
+    color: var(--primary);
+    font-family: Helvetica, sans-serif;
+    font-size: clamp(2rem, 2vw + 0.5rem, 1.35rem);
+  }
+
+  .servicios-grid {
+    grid-template-columns: 1fr;
   }
 
   .hero-frigoxgc {
@@ -490,11 +603,12 @@ margin-top: 3rem;
   }
   .logo-ticker__track img {
     height: 70px;
+    max-width: 140px;
   }
 
   .Marcas {
     grid-template-columns: 1fr;
-    padding: 2rem 1rem 3rem;
+    padding: 1rem 1rem rem;
     row-gap: 1.5rem;
     column-gap: 1rem;
   }
@@ -507,8 +621,3 @@ margin-top: 3rem;
     font-size: clamp(1.05rem, 2.5vw + 0.2rem, 1.4rem);
   }
 }
-
-
-
-
-
