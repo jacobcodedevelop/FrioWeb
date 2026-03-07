@@ -89,21 +89,73 @@
     </header>
 
     
+    <main class="contacto">
+      <div class="contacto__bg" aria-hidden="true"></div>
+      <div class="contacto__content">
+        <div class="contacto__form-card">
+          <h1>Hablemos</h1>
+          <p>Cuéntanos qué necesitas y te contactamos.</p>
+          <form
+            class="contacto__form"
+            action="mailto:jacob.lopez.gonzalez@gmail.com"
+            method="post"
+            enctype="text/plain"
+          >
+            <div class="form-grid">
+              <label class="form-field">
+                <span class="sr-only">Nombre</span>
+                <input type="text" name="nombre" placeholder="Nombre" required />
+              </label>
+              <label class="form-field">
+                <span class="sr-only">Apellidos</span>
+                <input type="text" name="apellidos" placeholder="Apellidos" required />
+              </label>
+              <label class="form-field">
+                <span class="sr-only">Correo</span>
+                <input type="email" name="correo" placeholder="Correo" required />
+              </label>
+              <label class="form-field">
+                <span class="sr-only">Teléfono</span>
+                <input type="tel" name="telefono" placeholder="Teléfono" />
+              </label>
+              <label class="form-field form-field--full">
+                <span class="sr-only">Asunto</span>
+                <input type="text" name="asunto" placeholder="Asunto" required />
+              </label>
+              <label class="form-field form-field--full">
+                <span class="sr-only">Mensaje</span>
+                <textarea name="mensaje" rows="4" placeholder="Mensaje" required></textarea>
+              </label>
+            </div>
+
+            <label class="form-checkbox">
+              <input type="checkbox" name="legal" required />
+              <span>Acepto el aviso legal y la política de privacidad</span>
+            </label>
+
+            <button type="submit" class="btn-acceso-directo-contacto">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+
+    <section class="mapa-contacto" aria-label="Ubicación de Frio Ortiz">
+      <div class="mapa-contacto__inner">
+        <iframe
+          title="Mapa de Frio Ortiz"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2179.695480803718!2d-15.403720616356889!3d27.8615389246993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc40a2bb1ebc0bad%3A0x20caabf5f0831496!2sFr%C3%ADo%20Ortiz%20S.L.!5e0!3m2!1ses!2ses!4v1772911565066!5m2!1ses!2ses"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
 
 
 
 
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-
-
-
-
-
-
-
+    
 <footer class="main-footer">
   <img
     class="footer-ice footer-ice--left"
