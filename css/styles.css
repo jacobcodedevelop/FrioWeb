@@ -299,7 +299,7 @@ body {
 .servicios h1 {
   text-align: center;
   color: var(--primary);
-  font-family:Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
   font-size: clamp(2rem, 3vw + 0.5rem, 3rem);
   margin-bottom: 3rem;
 }
@@ -307,8 +307,9 @@ body {
 .servicios p {
   text-align: center;
   color: var(--primary);
-  font-family:Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
   font-size: clamp(2.5rem, 2vw + 0.5rem, 1.35rem);
+  margin-top: 5rem;
 }
 
 .servicios-grid {
@@ -354,20 +355,59 @@ body {
   transform: scale(0.98);
 }
 
-.logo-ticker {
-  overflow: hidden;
-  background: #fff;
-  padding: 1.5rem 0;
+.acceso-directo-contacto {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
 }
 
-.logo-ticker__track {
+.btn-acceso-directo-contacto {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.85rem 1.75rem;
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 18px;
+  text-decoration: none;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.btn-acceso-directo-contacto:hover,
+.btn-acceso-directo-contacto:focus-visible {
+  background: rgba(211, 81, 81, 0.08);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.btn-acceso-directo-contacto:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.carrusel-logos {
+  overflow: hidden;
+  background: #fff;
+  padding: 2.5rem 0;
+}
+
+.pista-carrusel-logos {
   display: flex;
   gap: clamp(2rem, 3vw, 3.5rem);
   width: max-content;
   animation: logo-marquee 30s linear infinite;
 }
 
-.logo-ticker__track img {
+.pista-carrusel-logos img {
   height: clamp(80px, 10vw, 110px);
   max-width: 180px;
   width: auto;
@@ -376,7 +416,7 @@ body {
   display: block;
 }
 
-.logo-ticker:hover .logo-ticker__track {
+.carrusel-logos:hover .pista-carrusel-logos {
   animation-play-state: paused;
 }
 
@@ -608,7 +648,7 @@ body {
 
   .Marcas {
     grid-template-columns: 1fr;
-    padding: 1rem 1rem rem;
+    padding: 1rem 1rem 3rem;
     row-gap: 1.5rem;
     column-gap: 1rem;
   }
