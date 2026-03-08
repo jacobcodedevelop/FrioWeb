@@ -665,7 +665,7 @@ body {
   .texto-marcas p {
     font-size: clamp(1.05rem, 2.5vw + 0.2rem, 1.4rem);
   }
-    .contacto {
+  .contacto {
     padding: 2rem 1rem;
   }
 
@@ -678,12 +678,9 @@ body {
     justify-content: center;
   }
 
-.mapa-contacto__inner{
-  min-height: 50vh;
-}
-
-
-
+  .mapa-contacto__inner {
+    min-height: 50vh;
+  }
 }
 
 /* Contacto */
@@ -704,6 +701,10 @@ body {
   opacity: 0.8;
   transform: scale(1.08);
   z-index: 0;
+}
+
+.contacto--trabajo .contacto__bg {
+  background: url('/recursos/imagenes/fondotrabaja.jpg') center/cover no-repeat;
 }
 
 .contacto__content {
@@ -763,12 +764,14 @@ body {
 }
 
 .form-field input,
-.form-field textarea {
+.form-field textarea,
+.form-field select {
   width: 100%;
   border: 1.5px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 0.75rem 0.9rem;
   font-size: 1rem;
+  font-weight: 400;
   background: #fff;
   color: var(--primary-dark);
   transition:
@@ -777,7 +780,8 @@ body {
 }
 
 .form-field input:focus,
-.form-field textarea:focus {
+.form-field textarea:focus,
+.form-field select:focus {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(211, 81, 81, 0.15);
@@ -815,8 +819,6 @@ body {
   border: 0;
 }
 
-
-
 .mapa-contacto {
   background: #f7f7f7;
   padding: 0;
@@ -839,9 +841,3 @@ body {
   border: 0;
   display: block;
 }
-
-
-
-
-
-
