@@ -259,7 +259,7 @@ body {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   column-gap: clamp(0.75rem, 1.4vw, 1.25rem);
   row-gap: clamp(1.75rem, 3vw, 3rem);
-  padding: 1rem 20rem 1.5rem;
+  padding: 1rem 15rem 6rem;
   background: var(--background2);
   justify-items: center;
 }
@@ -497,6 +497,98 @@ body {
 .servicio-card:active {
   transform: perspective(900px) rotateX(4deg) rotateY(-4deg) translateY(0);
   box-shadow: 0 18px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* FAQ */
+.faq {
+  background: var(--background2);
+  padding: clamp(2.5rem, 4vw, 4rem) 1.5rem;
+}
+
+.faq__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+  color: var(--primary);
+}
+
+.faq__eyebrow {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--primary);
+  opacity: 0.9;
+}
+
+.faq h2 {
+  margin: 0;
+  font-size: clamp(1.9rem, 2vw + 0.4rem, 2.4rem);
+  color: var(--primary);
+}
+
+.faq-grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.faq-item[open] {
+  border-color: rgba(211, 81, 81, 0.2);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.08);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  padding: 1rem 1.1rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '›';
+  display: inline-block;
+  transform: rotate(90deg);
+  transition: transform 0.2s ease;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(-90deg);
+}
+
+.faq-item__content {
+  padding: 0 1.1rem 1rem;
+  color: var(--primary-dark);
+  line-height: 1.55;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.faq-item__content p {
+  margin: 0;
 }
 
 .acceso-directo-contacto {
@@ -819,7 +911,7 @@ body {
 
   .Marcas {
     grid-template-columns: 1fr;
-    padding: 1rem 1rem 1rem;
+    padding: 1rem 1rem 5rem;
     row-gap: 1.5rem;
     column-gap: 1rem;
   }
