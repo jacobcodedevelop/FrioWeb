@@ -233,7 +233,7 @@ body {
   text-align: center;
   color: var(--primary);
   font-family: Helvetica, sans-serif;
-  background: var(--background2);
+  background: var(--background);
 }
 
 .texto-marcas h1 {
@@ -256,18 +256,19 @@ body {
 
 .Marcas {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  column-gap: clamp(0.75rem, 1.4vw, 1.25rem);
-  row-gap: clamp(1.75rem, 3vw, 3rem);
-  padding: 1rem 15rem 6rem;
-  background: var(--background2);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem; /* fijo o un clamp pequeño, p.ej. clamp(1rem, 1vw, 1.5rem) */
+  max-width: 1400px;      /* limita el ancho en pantallas grandes */
+  margin: 0 auto;         /* centra el bloque */
+  padding: 1rem 2rem 5rem; /* padding moderado, no crece con la resolución */
+  background: var(--background);
   justify-items: center;
 }
 
 .brand-card {
   position: relative;
   display: block;
-  width: min(100%, 520px);
+  width: min(100%, 400px);
   border-radius: 18px;
   padding: 0.65rem;
   background: radial-gradient(
