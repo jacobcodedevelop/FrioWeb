@@ -389,7 +389,7 @@ body {
   color: var(--primary);
   font-family: Helvetica, sans-serif;
   font-size: clamp(2.5rem, 2vw + 0.5rem, 1.35rem);
-  margin-top: 5rem;
+  margin-top: 2.75rem;
 }
 
 .servicios-grid {
@@ -862,7 +862,7 @@ body {
   }
 
   .servicios {
-    padding: 2.25rem 1.25rem 2rem;
+    padding: 0.5rem 1.25rem 2rem;
   }
 
   .servicios h1 {
