@@ -121,10 +121,18 @@
           <p>Cuéntanos qué necesitas y te contactamos.</p>
           <form
             class="contacto__form"
-            action="mailto:pedidos@friortiz.es"
+            name="contacto"
             method="post"
-            enctype="text/plain"
+            action="/contacto.html"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
           >
+            <input type="hidden" name="form-name" value="contacto" />
+            <p class="sr-only" aria-hidden="true">
+              <label>Si eres humano, deja este campo vacío
+                <input name="bot-field" />
+              </label>
+            </p>
             <div class="form-grid">
               <label class="form-field">
                 <span class="sr-only">Nombre</span>

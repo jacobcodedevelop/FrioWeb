@@ -122,10 +122,18 @@
           <p>Déjanos tus datos y te contactaremos cuando tengamos una vacante.</p>
           <form
             class="contacto__form"
-            action="mailto:gestion@friortiz.es"
+            name="trabajo"
             method="post"
-            enctype="text/plain"
+            action="/trabajo.html"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
           >
+            <input type="hidden" name="form-name" value="trabajo" />
+            <p class="sr-only" aria-hidden="true">
+              <label>Si eres humano, deja este campo vacío
+                <input name="bot-field" />
+              </label>
+            </p>
             <div class="form-grid">
               <label class="form-field">
                 <span class="sr-only">Nombre</span>
