@@ -1,0 +1,46 @@
+* [33m5db264f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m se crea una página de agradecimiento como respuesta al envio de formulario
+* [33m0dff19b[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m se cambian los formularios para acceder a los forms de netlify y que no salga aviso de seguridad
+* [33md3330b9[m se cambia el número de la empresa en el pie de página
+* [33m3224b67[m se ajustan cosas visuales en móvil se se añade placeholder de cookies y legal
+* [33m5451802[m se pone en mayúscula la cabecera
+* [33m62eb2cf[m se ajusta el texto del hero en móvil
+* [33mab0ceed[m se ajusta el texto del hero en móvil
+* [33m4a39716[m se cambia los estilos del texto del hero de portada
+* [33m3ae10ee[m se cambia a ver catálogos las marcas
+* [33m86c4b08[m se terminan de ajusta el enlace de los catálogos a las marcas
+* [33m8714911[m se enlaza todos los catálogos a las respectivas marcas
+* [33m62193f2[m se enlaza el catálogo de impulso a la iamgen de frigo
+* [33m8ec14dd[m se comprimen los catálogos
+* [33m9d6c2cb[m se añaden los catálgos faltantes a la carpeta de recursos
+* [33m872b179[m ajustamos el texto de las imagenes de servicios
+* [33mf7df292[m ajustamos algunos espaciados
+* [33mf1bf13e[m cambiamos las tarjetas de las marcas de productos
+* [33mb8eb38d[m movemos los html a la carpeta raiz del proyecto
+* [33m7be8974[m[33m ([m[1;32mportada[m[33m)[m se ajusta el faq
+* [33mbe340fc[m se ajusta el tamaño de las tarjetas de marca
+* [33mc80bd1c[m hacemos alguna ajustes menores
+* [33m92d5c20[m se realizan ajustes visuales, imágenes de fondo, espaciados...
+* [33ma2c301c[m se agrrega acticle de preguntas frecuentes a la página de inicio y productos
+* [33me98305c[m se agrrega animacion a las cartas de servicios de la página principal
+* [33maa45321[m se agrrega animacion a las cartas de marcas de la pagina de productos
+* [33m384d416[m se agrrega contenido a la página de política de privacidad
+* [33mce1da8b[m se termina provisionalmente la pagina de trabaja y creamos articulos repetibles para el acceso directo a la pagina de contacto
+* [33m35696fc[m se crear el contenido de trabaja con nosotros
+* [33mf0babb3[m se añaden favicons
+* [33mc571ca0[m creamos formulario de contacto y seccion de maps
+* [33mbcedbc4[m empezamos la pagina de contacto
+* [33md333a81[m terminamos la seccion de servicios y añadimos un acceso directo a la pagina de contacto
+* [33me4c44d3[m creamos la seccion de servicios
+* [33mbb65abd[m empezamos con la página de productos y se añaden los catálogos
+* [33me18aa46[m se agrega carrusel de imágenes
+* [33ma59b082[m se terminan los detalles del pie de pagina
+* [33m16faf39[m se añade el pie de página
+* [33me2df3db[m se añade section de texto de otras marcas
+* [33m6fd8e03[m se añade imagen frigoxgc
+* [33ma41b424[m ultimos retoques al svg frigoxgc
+* [33m2444b7c[m se añade svg de frigoxgc
+* [33maa1d4ac[m[33m ([m[1;31morigin/portada[m[33m)[m se ajusta el texto de portada
+* [33meaf003f[m se ajusta al altura de la portada
+* [33m31f7268[m primeros ajustes a la portada
+* [33m63a3b5f[m Añadimos portada principal
+* [33m146ebc1[m Primer commit del proyecto
