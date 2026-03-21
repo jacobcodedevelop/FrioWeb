@@ -1051,7 +1051,7 @@ body {
 .contacto__bg {
   position: absolute;
   inset: 0;
-  background: url('recursos/imagenes/fondocontacto.jpg') center/cover no-repeat;
+  background: url('..recursos/imagenes/fondocontacto.jpg') center/cover no-repeat;
   filter: blur(0px);
   opacity: 0.8;
   transform: scale(1.08);
@@ -1059,7 +1059,7 @@ body {
 }
 
 .contacto--trabajo .contacto__bg {
-  background: url('recursos/imagenes/fondotrabaja.jpg') center/cover no-repeat;
+  background: url('..recursos/imagenes/fondotrabaja.jpg') center/cover no-repeat;
 }
 
 .contacto__content {
