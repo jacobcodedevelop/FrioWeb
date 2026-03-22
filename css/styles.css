@@ -842,8 +842,6 @@ body {
   margin-top: 3rem;
 }
 
-
-
 /* Contacto */
 .contacto {
   position: relative;
@@ -1001,6 +999,121 @@ body {
   overflow: hidden;
   border-radius: 0;
   box-shadow: none;
+}
+
+.historia {
+  background: var(--background2);
+  padding: clamp(2.5rem, 4vw, 4rem) 1.5rem;
+  color: var(--primary);
+}
+
+.historia__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.75rem;
+}
+
+.historia__header {
+  display: grid;
+  gap: 0.8rem;
+  text-align: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--primary);
+}
+
+.historia__lead {
+  margin: 0;
+  color: var(--primary-dark);
+  font-size: 1.05rem;
+}
+
+.historia__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.historia__card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.06);
+  color: var(--primary-dark);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.historia__card h2 {
+  margin: 0;
+  color: var(--primary);
+  font-size: 1.15rem;
+}
+
+.historia__card p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.director {
+  background: #fff;
+  padding: clamp(2.5rem, 4vw, 4rem) 1.5rem 3rem;
+  color: var(--primary-dark);
+}
+
+.director__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.director__text {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.director__text h2 {
+  margin: 0;
+  color: var(--primary);
+}
+
+.director__text p {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.director__badge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.director__pill {
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(211, 81, 81, 0.08);
+  color: var(--primary);
+  border: 1px solid rgba(211, 81, 81, 0.25);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .historia__header {
+    text-align: left;
+  }
+
+  .director__inner {
+    gap: 1.25rem;
+  }
 }
 
 /* Páginas legales */
@@ -1269,6 +1382,7 @@ body {
   }
 
   .contacto--direccion .contacto__bg {
-    background: url('../recursos/imagenes/paco-movil.png') center/cover no-repeat;
+    background: url('../recursos/imagenes/paco-movil.png') center/cover
+      no-repeat;
   }
 }
