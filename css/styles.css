@@ -153,6 +153,7 @@ body {
 .hero-text-portada h1 {
   margin: 0 0 0.5rem;
   font-size: clamp(5rem, 4.5vw + 1rem, 6rem);
+  line-height: 1.08;
 }
 
 .hero-text-portada p {
@@ -1027,7 +1028,6 @@ body {
   font-size: 0.95rem;
   color: var(--primary);
 }
-
 
 .historia__grid {
   display: grid;
