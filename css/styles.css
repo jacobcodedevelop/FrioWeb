@@ -714,6 +714,81 @@ body {
   justify-content: center;
 }
 
+.fotovoltaica-home {
+  background: var(--background2);
+  padding: 0 1.5rem 3rem;
+}
+
+.fotovoltaica-home__link {
+  max-width: 1220px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(360px, 1.25fr);
+  gap: 1.4rem;
+  align-items: center;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: clamp(1.2rem, 2vw, 1.8rem);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+}
+
+.fotovoltaica-home__text {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.fotovoltaica-home__eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.fotovoltaica-home__text h2 {
+  margin: 0;
+  color: var(--primary);
+  font-size: clamp(1.7rem, 2.8vw, 2.45rem);
+  line-height: 1.15;
+}
+
+.fotovoltaica-home__text p {
+  margin: 0;
+  color: var(--primary-dark);
+  line-height: 1.6;
+  font-size: 1.02rem;
+}
+
+.fotovoltaica-home__cta {
+  width: fit-content;
+  padding: 0.72rem 1.2rem;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.fotovoltaica-home__logos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.fotovoltaica-home__logos img,
+.fotovoltaica-logos__item img {
+  width: 100%;
+  height: 88px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0.45rem;
+}
+
 .carrusel-logos {
   overflow: hidden;
   background: #fff;
@@ -1245,6 +1320,157 @@ body {
   height: auto;
 }
 
+.fotovoltaica-page {
+  background: linear-gradient(180deg, #f7f8fc 0%, #ffffff 100%);
+  flex: 1;
+}
+
+.fotovoltaica-hero {
+  padding: clamp(2.75rem, 4vw, 4rem) 1.5rem 2rem;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(255, 216, 79, 0.26),
+      transparent 28%
+    ),
+    linear-gradient(180deg, rgba(211, 81, 81, 0.08), rgba(211, 81, 81, 0));
+}
+
+.fotovoltaica-hero__inner,
+.fotovoltaica-info__grid,
+.fotovoltaica-logos__grid,
+.fotovoltaica-expediente__inner,
+.fotovoltaica-cierre__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.fotovoltaica-hero__inner {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.fotovoltaica-hero__eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.fotovoltaica-hero h1 {
+  margin: 0;
+  color: var(--primary-dark);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.08;
+}
+
+.fotovoltaica-hero__lead {
+  margin: 0;
+  color: var(--primary-dark);
+  max-width: 760px;
+  line-height: 1.72;
+}
+
+.fotovoltaica-info {
+  padding: 0.4rem 1.5rem 2rem;
+}
+
+.fotovoltaica-info__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.fotovoltaica-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 16px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.06);
+  padding: 1.2rem;
+  color: var(--primary-dark);
+}
+
+.fotovoltaica-card h2 {
+  margin: 0 0 0.65rem;
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.fotovoltaica-card p {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.fotovoltaica-logos {
+  padding: 0 1.5rem 2rem;
+}
+
+.fotovoltaica-logos__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.fotovoltaica-logos__item {
+  margin: 0;
+}
+
+.fotovoltaica-expediente {
+  padding: 0 1.5rem 2.5rem;
+}
+
+.fotovoltaica-expediente__inner {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.fotovoltaica-expediente__inner h2 {
+  margin: 0;
+  color: var(--primary);
+  text-align: center;
+}
+
+.fotovoltaica-expediente__media {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.fotovoltaica-expediente__media img {
+  width: min(100%, 780px);
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.09);
+}
+
+.fotovoltaica-cierre {
+  padding: 0 1.5rem 3rem;
+}
+
+.fotovoltaica-cierre__inner {
+  display: grid;
+  gap: 0.9rem;
+  justify-items: center;
+  text-align: center;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.06);
+  padding: 1.4rem;
+}
+
+.fotovoltaica-cierre__inner h2 {
+  margin: 0;
+  color: var(--primary);
+}
+
+.fotovoltaica-cierre__inner p {
+  margin: 0;
+  color: var(--primary-dark);
+}
+
 @media (max-width: 768px) {
   .main-header {
     flex-wrap: wrap;
@@ -1316,6 +1542,39 @@ body {
     padding: 0.5rem 0.75rem;
     border-radius: 8px;
     justify-content: center; /* centra el contenido en el eje X */
+  }
+
+  .fotovoltaica-home {
+    padding: 0 1rem 2.2rem;
+  }
+
+  .fotovoltaica-home__link {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .fotovoltaica-home__logos,
+  .fotovoltaica-logos__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fotovoltaica-home__logos img,
+  .fotovoltaica-logos__item img {
+    height: auto;
+    min-height: 80px;
+  }
+
+  .fotovoltaica-info__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fotovoltaica-expediente,
+  .fotovoltaica-logos,
+  .fotovoltaica-info,
+  .fotovoltaica-hero,
+  .fotovoltaica-cierre {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .hero-media {
