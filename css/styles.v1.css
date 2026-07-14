@@ -1,0 +1,1727 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: rgb(211, 81, 81);
+  --primary-dark: rgb(8, 8, 8);
+  --primary-hover: rgb(13, 91, 168);
+  --primary-light: rgb(0, 153, 255);
+  --background: rgb(240, 240, 240);
+  --background2: rgb(251, 246, 246);
+  --frio-green: rgb(99, 196, 77, 0.8);
+  --text-primary: rgb(255, 255, 255);
+  --text-secondary: rgb(203, 213, 225);
+  --text-muted: rgb(148, 163, 184);
+  --border: rgba(255, 255, 255, 0.1);
+  --card-bg: rgb(30, 41, 59);
+  --shadow: rgba(0, 0, 0, 0.04);
+  --input-bg: rgb(30, 41, 59);
+  --hsla-example: rgb(31, 143, 255);
+}
+
+body {
+  font-family: system-ui;
+  background-color: var(--background2);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+}
+
+.main-header {
+  background-color: rgba(211, 81, 81, 0.92);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  box-shadow: 0 15px 10px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+}
+
+.main-header .logo {
+  width: clamp(10rem, 15vw, 18rem); /* relativo y acotado */
+  height: auto;
+  flex-shrink: 0;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.08);
+  padding: 8px;
+  cursor: pointer;
+}
+
+.nav-toggle-btn span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--text-primary);
+  border-radius: 2px;
+}
+
+.main-header .main-navigation ul {
+  display: flex; /* elementos en fila */
+  gap: 16px; /* espacio entre elementos */
+  list-style: none; /* sin viñetas */
+  margin: 0;
+  padding: 0;
+}
+
+.main-header .main-navigation .navigation-element {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 750;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.main-header .main-navigation .navigation-element:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: var(--text-secondary);
+}
+
+.hero-portada {
+  width: 100%;
+}
+
+.hero-media {
+  display: grid;
+  width: 100%;
+  isolation: isolate;
+}
+
+.hero-media picture {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  max-height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-text-portada {
+  grid-area: 1 / 1;
+  justify-self: start;
+  text-align: left;
+  color: #fff;
+  padding: 0;
+  margin-top: 7rem;
+  font-family: Helvetica, sans-serif;
+  margin-left: clamp(7rem, 6vw, 8rem);
+  max-width: min(90vw, 800px);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.hero-text-portada h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(5rem, 4.5vw + 1rem, 6rem);
+  line-height: 1.08;
+}
+
+.hero-text-portada p {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.4vw + 0.4rem, 1.75rem);
+}
+
+.hero-frigoxgc-text {
+  grid-area: 1 / 1;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--primary);
+  font-size: 170%;
+  font-family: helvetica, sans-serif;
+}
+
+.hero-frigoxgc {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  background: var(--background);
+}
+
+.hero-frigoxgc::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  height: 45%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.12) 0%,
+    rgba(0, 0, 0, 0.06) 5%,
+    rgba(0, 0, 0, 0) 10%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-frigoxgc-media {
+  width: 100%;
+  isolation: isolate;
+}
+
+.hero-frigoxgc-media picture {
+  grid-area: 1 / 1;
+  margin: 0 auto;
+  display: block;
+  width: 80%;
+  height: 100%;
+}
+
+.hero-frigoxgc-media img {
+  width: 100%;
+  height: 100%;
+  max-height: 100vh;
+  background-color: var(--background);
+}
+
+.other-brands {
+  width: 100%;
+  background: var(--primary);
+}
+
+.other-brands-text {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: var(--text-primary);
+  font-size: clamp(0.75rem, 3vw + 0.5rem, 2.5rem);
+  font-weight: 900;
+  font-family: helvetica, sans-serif;
+}
+
+.cookies-page {
+  min-height: calc(100vh - 240px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 4rem 1.5rem;
+}
+
+.cookies-placeholder {
+  max-width: 900px;
+  text-align: center;
+  color: var(--primary);
+}
+
+.cookies-placeholder h1 {
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.cookies-placeholder p {
+  margin: 0;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  color: var(--primary);
+}
+
+.aviso-page {
+  min-height: calc(100vh - 240px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 4rem 1.5rem;
+}
+
+.aviso-placeholder {
+  max-width: 900px;
+  text-align: center;
+  color: var(--primary);
+}
+
+.aviso-placeholder h1 {
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.aviso-placeholder p {
+  margin: 0;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  color: var(--primary);
+}
+
+.texto-marcas {
+  width: 100%;
+  padding: 3rem 1.5rem 1.5rem;
+  text-align: center;
+  color: var(--primary);
+  font-family: Helvetica, sans-serif;
+  background: var(--background2);
+}
+
+.texto-marcas h1 {
+  max-width: 960px;
+  margin: 0 auto;
+  font-size: clamp(3rem, 2vw + 0.4rem, 1.7rem);
+  line-height: 1.6;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.texto-marcas p {
+  max-width: 960px;
+  margin: 0 auto;
+  font-size: clamp(1.5rem, 2vw + 0.4rem, 1.7rem);
+  line-height: 1.6;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.Marcas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem; /* fijo o un clamp pequeño, p.ej. clamp(1rem, 1vw, 1.5rem) */
+  max-width: 1400px; /* limita el ancho en pantallas grandes */
+  margin: 0 auto; /* centra el bloque */
+  padding: 1rem 2rem 5rem; /* padding moderado, no crece con la resolución */
+  background: var(--background2);
+  justify-items: center;
+}
+
+.brand-card {
+  position: relative;
+  display: block;
+  width: min(100%, 400px);
+  border-radius: 18px;
+  padding: 0.65rem;
+  background: radial-gradient(
+    120% 140% at 10% 10%,
+    rgba(255, 255, 255, 0.55),
+    rgba(255, 255, 255, 0.12) 38%,
+    rgba(99, 196, 77, 0.06) 60%,
+    rgba(0, 0, 0, 0.04) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  isolation: isolate;
+  transform-style: preserve-3d;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.brand-card::before {
+  /* Diffused glass glow */
+  content: '';
+  position: absolute;
+  inset: -40%;
+  background: conic-gradient(
+    from 140deg,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.05),
+    rgba(99, 196, 77, 0.2),
+    rgba(0, 153, 255, 0.08),
+    rgba(255, 255, 255, 0.35)
+  );
+  filter: blur(12px);
+  opacity: 0.4;
+  pointer-events: none;
+  transform: translateZ(-1px);
+}
+
+.brand-card::after {
+  /* Moving shine sweep on hover */
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -80%;
+  width: 70%;
+  height: 220%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(12deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.brand-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+  padding: 0.55rem;
+  transition:
+    transform 0.45s ease,
+    filter 0.35s ease;
+}
+
+.brand-card:hover,
+.brand-card:focus-visible {
+  transform: perspective(900px) rotateX(6deg) rotateY(-6deg) translateY(-4px);
+  box-shadow: 0 26px 48px rgba(0, 0, 0, 0.18);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.brand-card:hover::after,
+.brand-card:focus-visible::after {
+  animation: brand-shine 0.95s ease forwards;
+}
+
+.brand-card:hover img,
+.brand-card:focus-visible img {
+  transform: scale(1.04) translateZ(10px);
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.12));
+}
+
+.brand-card:active {
+  transform: perspective(900px) rotateX(4deg) rotateY(-4deg) translateY(0);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.12);
+}
+
+@keyframes brand-shine {
+  to {
+    left: 140%;
+    opacity: 0.4;
+  }
+}
+
+.servicios {
+  background: var(--background2);
+  padding: 1.5rem 1.5rem 2.5rem;
+}
+
+.servicios h1 {
+  text-align: center;
+  color: var(--primary);
+  font-family: Helvetica, sans-serif;
+  font-size: clamp(2rem, 3vw + 0.5rem, 3rem);
+  margin-bottom: 3rem;
+}
+
+.servicios p {
+  text-align: center;
+  color: var(--primary);
+  font-family: Helvetica, sans-serif;
+  font-size: clamp(2.5rem, 2vw + 0.5rem, 1.35rem);
+  margin-top: 2.75rem;
+}
+
+.servicios-grid {
+  max-width: 1700px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(260px, 1fr));
+  gap: clamp(1rem, 0.5vw, 2rem);
+  justify-items: center;
+}
+
+.servicio-card {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 18px;
+  padding: 0.65rem;
+  background: radial-gradient(
+    120% 140% at 10% 10%,
+    rgba(255, 255, 255, 0.55),
+    rgba(255, 255, 255, 0.12) 38%,
+    rgba(99, 196, 77, 0.06) 60%,
+    rgba(0, 0, 0, 0.04) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  isolation: isolate;
+  transform-style: preserve-3d;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.servicio-card::before {
+  content: '';
+  position: absolute;
+  inset: -40%;
+  background: conic-gradient(
+    from 140deg,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.05),
+    rgba(99, 196, 77, 0.2),
+    rgba(0, 153, 255, 0.08),
+    rgba(255, 255, 255, 0.35)
+  );
+  filter: blur(12px);
+  opacity: 0.4;
+  pointer-events: none;
+  transform: translateZ(-1px);
+}
+
+.servicio-card::after {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -80%;
+  width: 70%;
+  height: 220%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(12deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.servicio-card img {
+  width: 100%;
+  height: auto;
+  max-width: 460px;
+  object-fit: contain;
+  display: block;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+  padding: 0.55rem;
+  transition:
+    transform 0.45s ease,
+    filter 0.35s ease;
+}
+
+.servicio-card:hover,
+.servicio-card:focus-visible {
+  transform: perspective(900px) rotateX(6deg) rotateY(-6deg) translateY(-4px);
+  box-shadow: 0 26px 48px rgba(0, 0, 0, 0.18);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.servicio-card:hover::after,
+.servicio-card:focus-visible::after {
+  animation: brand-shine 0.95s ease forwards;
+}
+
+.servicio-card:hover img,
+.servicio-card:focus-visible img {
+  transform: scale(1.04) translateZ(10px);
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.12));
+}
+
+.servicio-card:active {
+  transform: perspective(900px) rotateX(4deg) rotateY(-4deg) translateY(0);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* FAQ */
+.faq {
+  background: var(--background2);
+  padding: clamp(2.5rem, 4vw, 4rem) 1.5rem;
+}
+
+.faq__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+  color: var(--primary);
+}
+
+.faq__eyebrow {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--primary);
+  opacity: 0.9;
+}
+
+.faq h2 {
+  margin: 0;
+  font-size: clamp(1.9rem, 2vw + 0.4rem, 2.4rem);
+  color: var(--primary);
+}
+
+.faq-grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.faq-item[open] {
+  border-color: rgba(211, 81, 81, 0.2);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.08);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  padding: 1rem 1.1rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '›';
+  display: inline-block;
+  transform: rotate(90deg);
+  transition: transform 0.2s ease;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(-90deg);
+}
+
+.faq-item__content {
+  padding: 0 1.1rem 1rem;
+  color: var(--primary-dark);
+  line-height: 1.55;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.faq-item__content p {
+  margin: 0;
+}
+
+.acceso-directo-contacto {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.btn-acceso-directo-contacto {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.85rem 1.75rem;
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 18px;
+  text-decoration: none;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.btn-acceso-directo-contacto:hover,
+.btn-acceso-directo-contacto:focus-visible {
+  background: rgba(211, 81, 81, 0.08);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.btn-acceso-directo-contacto:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.contacto .btn-acceso-directo-contacto {
+  align-self: center;
+  margin-top: 0.25rem;
+}
+
+.cta-contacto {
+  background: var(--background2);
+  padding: 2.5rem 1.5rem 6rem;
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.cta-contacto__texto {
+  color: var(--primary);
+  font-family: Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: clamp(2rem, 2.4vw, 2.5rem);
+  margin: 0;
+}
+
+.cta-contacto__accion {
+  display: flex;
+  justify-content: center;
+}
+
+.fotovoltaica-home {
+  background: var(--background2);
+  padding: 0 1.5rem 3rem;
+}
+
+.fotovoltaica-home__link {
+  max-width: 1220px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(360px, 1.25fr);
+  gap: 1.4rem;
+  align-items: center;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: clamp(1.2rem, 2vw, 1.8rem);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+}
+
+.fotovoltaica-home__text {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.fotovoltaica-home__eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.fotovoltaica-home__text h2 {
+  margin: 0;
+  color: var(--primary);
+  font-size: clamp(1.7rem, 2.8vw, 2.45rem);
+  line-height: 1.15;
+}
+
+.fotovoltaica-home__text p {
+  margin: 0;
+  color: var(--primary-dark);
+  line-height: 1.6;
+  font-size: 1.02rem;
+}
+
+.fotovoltaica-home__cta {
+  width: fit-content;
+  padding: 0.72rem 1.2rem;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.fotovoltaica-home__logos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.fotovoltaica-home__logos img,
+.fotovoltaica-logos__item img {
+  width: 100%;
+  height: 88px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0.45rem;
+}
+
+.carrusel-logos {
+  overflow: hidden;
+  background: #fff;
+  padding: 2.5rem 0;
+}
+
+.pista-carrusel-logos {
+  display: flex;
+  gap: clamp(6rem, 3vw, 3.5rem);
+  width: max-content;
+  animation: logo-marquee 30s linear infinite;
+}
+
+.pista-carrusel-logos img {
+  height: clamp(80px, 10vw, 110px);
+  max-width: 180px;
+  width: auto;
+  flex: 0 0 auto;
+  object-fit: contain;
+  display: block;
+}
+
+.carrusel-logos:hover .pista-carrusel-logos {
+  animation-play-state: paused;
+}
+
+@keyframes logo-marquee {
+  to {
+    transform: translateX(-33.3333%);
+  }
+}
+
+.main-footer {
+  background: var(--primary);
+  color: #ffffff;
+  padding: 0.4rem 1.5rem;
+  border-top: 2px solid rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-ice {
+  position: absolute;
+  bottom: 0;
+  width: clamp(140px, 16vw, 200px);
+  height: auto;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.2));
+  opacity: 0.8;
+}
+
+.footer-ice--left {
+  left: 125px;
+  top: 40px;
+}
+
+.footer-ice--right {
+  right: 120px;
+  top: 45px;
+}
+
+.footer-brand {
+  max-width: 400px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.footer-brand img {
+  width: 400px;
+  height: auto;
+}
+
+.footer-columns {
+  display: flex;
+  gap: clamp(2.5rem, 6vw, 4rem);
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.footer-column {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-column h3 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.footer-column a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.footer-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.footer-column a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-column ul {
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+  font-size: 1rem;
+}
+
+.footer-text {
+  display: block;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* Contacto */
+.contacto {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(2rem, 4vw, 4rem) 1.25rem;
+  overflow: hidden;
+}
+
+.contacto__bg {
+  position: absolute;
+  inset: 0;
+  background: url('../recursos/imagenes/fondocontacto.jpg') center/cover
+    no-repeat;
+  filter: blur(0px);
+  opacity: 0.8;
+  transform: scale(1.08);
+  z-index: 0;
+}
+
+.contacto--trabajo .contacto__bg {
+  background: url('../recursos/imagenes/fondotrabaja.jpg') center/cover
+    no-repeat;
+}
+
+.contacto--direccion .contacto__bg {
+  background: url('../recursos/imagenes/paco-escritorio.png') center/cover
+    no-repeat;
+}
+
+.contacto__content {
+  position: relative;
+  z-index: 1;
+  width: min(960px, 100%);
+}
+
+.contacto__form-card {
+  background: rgba(255, 255, 255, 0.8);
+  background: 211, 81, 81, 0.8;
+  color: var(--primary-dark);
+  border-radius: 18px;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.12);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  backdrop-filter: blur(4px);
+}
+
+.contacto__form-card h1 {
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+  font-size: clamp(1.75rem, 2vw + 0.5rem, 2.5rem);
+  text-align: center;
+}
+
+.contacto__form-card p {
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+  font-size: 1rem;
+}
+
+.contacto__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.25rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-field--full {
+  grid-column: 1 / -1;
+}
+
+.form-field span {
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+  width: 100%;
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  font-size: 1rem;
+  font-weight: 400;
+  background: #fff;
+  color: var(--primary-dark);
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(211, 81, 81, 0.15);
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.95rem;
+  color: var(--primary-dark);
+  justify-content: center;
+}
+
+.form-checkbox input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+.contacto .btn-acceso-directo-contacto {
+  align-self: center;
+  margin-top: 0.25rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.mapa-contacto {
+  background: #f7f7f7;
+  padding: 0;
+}
+
+.mapa-contacto__inner {
+  width: 100%;
+  max-height: 60vh;
+  max-width: none;
+  margin: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.historia {
+  background: var(--background2);
+  padding: clamp(2.5rem, 4vw, 4rem) 1.5rem;
+  color: var(--primary);
+}
+
+.historia__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.75rem;
+}
+
+.historia__header {
+  display: grid;
+  gap: 0.8rem;
+  text-align: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--primary);
+}
+
+.historia__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.historia__card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.06);
+  color: var(--primary-dark);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.historia__card h2 {
+  margin: 0;
+  color: var(--primary);
+  font-size: 1.15rem;
+}
+
+.historia__card p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.director {
+  background: #fff;
+  padding: clamp(2.5rem, 4vw, 4rem) 1.5rem 3rem;
+  color: var(--primary-dark);
+}
+
+.director__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.director__text {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.director__text h2 {
+  margin: 0;
+  color: var(--primary);
+}
+
+.director__text p {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.director__badge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.director__pill {
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(211, 81, 81, 0.08);
+  color: var(--primary);
+  border: 1px solid rgba(211, 81, 81, 0.25);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .historia__header {
+    text-align: center;
+  }
+
+  .director__inner {
+    gap: 1.25rem;
+  }
+}
+
+/* Páginas legales */
+.legal-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 3vw, 3rem) 1.5rem clamp(2rem, 4vw, 3.5rem);
+  color: var(--primary);
+}
+
+.legal-page__section {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.legal-page h1,
+.legal-page h2,
+.legal-page h3 {
+  text-align: center;
+  color: var(--primary);
+}
+
+.legal-page p,
+.legal-page li {
+  text-align: justify;
+  color: var(--primary-dark);
+}
+
+.legal-page ul {
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.mapa-contacto iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.quote-banner {
+  background: var(--primary);
+  color: var(--text-primary);
+  padding: clamp(1.5rem, 2vw, 2.5rem) 1.5rem;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+
+.quote-banner__inner {
+  max-width: 900px;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.quote-banner__text {
+  position: relative;
+  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  padding: 0.35rem 0.25rem;
+}
+
+.quote-banner__author {
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  opacity: 0.9;
+}
+
+/* Pedidos Online */
+.pedidos-online-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 4rem) 1.5rem clamp(2.5rem, 5vw, 4.5rem);
+  background: var(--background2);
+  color: var(--primary-dark);
+  flex: 1;
+}
+
+.titulo-pedidos-online {
+  margin: 0 0 2.5rem 0;
+  color: var(--primary);
+  font-size: clamp(2rem, 3vw + 0.5rem, 3rem);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.3;
+  font-family: Helvetica, sans-serif;
+}
+
+.subtitulo-pedidos-online {
+  margin: 2.5rem 0 1rem 0;
+  color: var(--primary);
+  font-size: clamp(1.35rem, 2.2vw + 0.3rem, 1.9rem);
+  font-weight: 700;
+  line-height: 1.4;
+  font-family: Helvetica, sans-serif;
+}
+
+.pedidos-online-page p {
+  margin: 0 0 1.5rem 0;
+  color: var(--primary-dark);
+  font-size: clamp(0.95rem, 1.2vw + 0.4rem, 1.15rem);
+  line-height: 1.75;
+  text-align: justify;
+}
+
+.pedidos-online-page p a,
+.pedidos-online-page p a:visited,
+.pedidos-online-page p a:hover,
+.pedidos-online-page p a:active {
+  color: var(--primary);
+}
+
+.pedidos-online-page p:last-of-type {
+  margin-bottom: 0;
+}
+
+.subtitulo-acceso-pedidos {
+  text-align: center;
+  margin-top: 7rem;
+}
+
+.acceso-pedidos-link {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.acceso-pedidos-link img {
+  max-width: min(100%, 320px);
+  height: auto;
+}
+
+.fotovoltaica-page {
+  background: linear-gradient(180deg, #f7f8fc 0%, #ffffff 100%);
+  flex: 1;
+}
+
+.fotovoltaica-hero {
+  padding: clamp(2.75rem, 4vw, 4rem) 1.5rem 2rem;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(255, 216, 79, 0.26),
+      transparent 28%
+    ),
+    linear-gradient(180deg, rgba(211, 81, 81, 0.08), rgba(211, 81, 81, 0));
+}
+
+.fotovoltaica-hero__inner,
+.fotovoltaica-info__grid,
+.fotovoltaica-logos__grid,
+.fotovoltaica-expediente__inner,
+.fotovoltaica-cierre__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.fotovoltaica-hero__inner {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.fotovoltaica-hero__eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.fotovoltaica-hero h1 {
+  margin: 0;
+  color: var(--primary-dark);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.08;
+}
+
+.fotovoltaica-hero__lead {
+  margin: 0;
+  color: var(--primary-dark);
+  max-width: 760px;
+  line-height: 1.72;
+}
+
+.fotovoltaica-info {
+  padding: 0.4rem 1.5rem 2rem;
+}
+
+.fotovoltaica-info__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.fotovoltaica-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 16px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.06);
+  padding: 1.2rem;
+  color: var(--primary-dark);
+}
+
+.fotovoltaica-card h2 {
+  margin: 0 0 0.65rem;
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.fotovoltaica-card p {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.fotovoltaica-logos {
+  padding: 0 1.5rem 2rem;
+}
+
+.fotovoltaica-logos__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.fotovoltaica-logos__item {
+  margin: 0;
+}
+
+.fotovoltaica-expediente {
+  padding: 0 1.5rem 2.5rem;
+}
+
+.fotovoltaica-expediente__inner {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.fotovoltaica-expediente__inner h2 {
+  margin: 0;
+  color: var(--primary);
+  text-align: center;
+}
+
+.fotovoltaica-expediente__media {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.fotovoltaica-expediente__media img {
+  width: min(100%, 780px);
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.09);
+}
+
+.fotovoltaica-cierre {
+  padding: 0 1.5rem 3rem;
+}
+
+.fotovoltaica-cierre__inner {
+  display: grid;
+  gap: 0.9rem;
+  justify-items: center;
+  text-align: center;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.06);
+  padding: 1.4rem;
+}
+
+.fotovoltaica-cierre__inner h2 {
+  margin: 0;
+  color: var(--primary);
+}
+
+.fotovoltaica-cierre__inner p {
+  margin: 0;
+  color: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    align-items: center;
+  }
+
+  /* Asegura que el logo se centre verticalmente con el botón hamburguesa */
+  .main-header .logo-link {
+    display: flex;
+    align-items: center;
+  }
+
+  .main-footer {
+    padding: 1.25rem 1.25rem;
+  }
+
+  .footer-ice {
+    width: clamp(10px, 60vw, 150px);
+    opacity: 0.5;
+  }
+
+  .footer-ice--left {
+    left: -1px;
+    top: 250px;
+  }
+
+  .footer-ice--right {
+    right: -1px;
+    top: 250px;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+  }
+
+  .main-header .logo {
+    width: clamp(10rem, 40vw, 14rem);
+  }
+
+  .nav-toggle-btn {
+    display: inline-flex;
+  }
+
+  .main-navigation {
+    width: 100%;
+    order: 3;
+  }
+
+  .main-header .main-navigation ul {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 0.25rem;
+  }
+
+  .nav-toggle:checked ~ .main-navigation ul {
+    display: flex;
+  }
+
+  .main-header .main-navigation .navigation-element {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    justify-content: center; /* centra el contenido en el eje X */
+  }
+
+  .fotovoltaica-home {
+    padding: 0 1rem 2.2rem;
+  }
+
+  .fotovoltaica-home__link {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .fotovoltaica-home__logos,
+  .fotovoltaica-logos__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fotovoltaica-home__logos img,
+  .fotovoltaica-logos__item img {
+    height: auto;
+    min-height: 80px;
+  }
+
+  .fotovoltaica-info__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fotovoltaica-expediente,
+  .fotovoltaica-logos,
+  .fotovoltaica-info,
+  .fotovoltaica-hero,
+  .fotovoltaica-cierre {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-media {
+    min-height: 50vh;
+  }
+
+  .hero-text-portada {
+    padding: 0 1.25rem;
+    margin: 0 0 1.5rem 1.25rem;
+    max-width: min(90vw, 900px);
+    justify-self: start;
+    align-self: end;
+  }
+
+  .hero-text-portada h1 {
+    font-size: clamp(2rem, 6vw + 1rem, 3rem);
+    line-height: 1.1;
+  }
+
+  .hero-text-portada p {
+    font-size: clamp(1rem, 3vw + 0.3rem, 1.3rem);
+    max-width: min(65vw, 600px);
+  }
+
+  .servicios {
+    padding: 0.5rem 1.25rem 2rem;
+  }
+
+  .servicios h1 {
+    text-align: center;
+    color: var(--primary);
+    font-family: Helvetica, sans-serif;
+    font-size: clamp(2rem, 3vw + 0.5rem, 3rem);
+    margin-bottom: 3rem;
+  }
+
+  .servicios p {
+    text-align: center;
+    color: var(--primary);
+    font-family: Helvetica, sans-serif;
+    font-size: clamp(2rem, 2vw + 0.5rem, 1.35rem);
+  }
+
+  .servicios-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-frigoxgc {
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-frigoxgc-text {
+    padding: 0rem 2rem 0rem 2rem;
+  }
+
+  .hero-frigoxgc-text h1 {
+    font-size: clamp(1.35rem, 4vw + 0.6rem, 1.9rem);
+    line-height: 1.2;
+  }
+
+  .hero-frigoxgc-media picture {
+    width: 90%;
+  }
+
+  /* Ajustes móviles */
+  .logo-ticker {
+    padding: 1rem 0;
+  }
+  .logo-ticker__track img {
+    height: 70px;
+    max-width: 140px;
+  }
+
+  .Marcas {
+    grid-template-columns: 1fr;
+    padding: 1rem 1rem 5rem;
+    row-gap: 1.5rem;
+    column-gap: 1rem;
+  }
+
+  .brand-card {
+    width: 100%;
+    transform: none;
+  }
+
+  .brand-card:hover,
+  .brand-card:focus-visible {
+    transform: translateY(-2px);
+  }
+
+  .servicio-card {
+    width: 100%;
+    max-width: none;
+    transform: none;
+  }
+
+  .servicio-card:hover,
+  .servicio-card:focus-visible {
+    transform: translateY(-2px);
+  }
+
+  .texto-marcas {
+    padding: 2.25rem 1.25rem 1rem;
+  }
+
+  .texto-marcas p {
+    font-size: clamp(1.05rem, 2.5vw + 0.2rem, 1.4rem);
+  }
+  .contacto {
+    padding: 2rem 1rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contacto .btn-acceso-directo-contacto {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mapa-contacto__inner {
+    min-height: 50vh;
+  }
+
+  .contacto--direccion .contacto__bg {
+    background: url('../recursos/imagenes/paco-movil.png') center/cover
+      no-repeat;
+  }
+
+  /* Pedidos Online - Móvil */
+  .pedidos-online-page {
+    padding: clamp(1.5rem, 3vw, 3rem) 1rem clamp(2rem, 3.5vw, 3.5rem);
+  }
+
+  .titulo-pedidos-online {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 2rem;
+  }
+
+  .subtitulo-pedidos-online {
+    font-size: clamp(1.1rem, 4vw, 1.6rem);
+    margin-top: 2rem;
+  }
+
+  .pedidos-online-page p {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    text-align: left;
+  }
+}
